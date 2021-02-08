@@ -1,0 +1,13 @@
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\bin\Debug\netcoreapp3.1\CenterPoint.exe
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\bin\Debug\netcoreapp3.1\CenterPoint.deps.json
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\bin\Debug\netcoreapp3.1\CenterPoint.runtimeconfig.json
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\bin\Debug\netcoreapp3.1\CenterPoint.runtimeconfig.dev.json
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\bin\Debug\netcoreapp3.1\CenterPoint.dll
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\bin\Debug\netcoreapp3.1\CenterPoint.pdb
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\obj\Debug\netcoreapp3.1\CenterPoint.csprojAssemblyReference.cache
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\obj\Debug\netcoreapp3.1\CenterPoint.AssemblyInfoInputs.cache
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\obj\Debug\netcoreapp3.1\CenterPoint.AssemblyInfo.cs
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\obj\Debug\netcoreapp3.1\CenterPoint.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\obj\Debug\netcoreapp3.1\CenterPoint.dll
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\obj\Debug\netcoreapp3.1\CenterPoint.pdb
+C:\Users\user1\Documents\C#\CenterPoint\CenterPoint\obj\Debug\netcoreapp3.1\CenterPoint.genruntimeconfig.cache
