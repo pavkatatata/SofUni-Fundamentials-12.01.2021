@@ -1,0 +1,41 @@
+using System;
+using System.Numerics;
+
+namespace EX09_Spice_Must_Flow
+{
+    class MineProduction
+    {
+        static void Main()
+        {
+
+            int powerN = int.Parse(Console.ReadLine());
+            int distanceM = int.Parse(Console.ReadLine());
+            int exhaustionY = int.Parse(Console.ReadLine());
+
+            int originalN = powerN;
+            int count = 0;
+
+            while (!(powerN < distanceM))
+            {
+                powerN = powerN - distanceM;
+                count++;
+
+
+                if (powerN == originalN / 2 && exhaustionY != 0)
+                {
+                    powerN = (int)powerN / exhaustionY;
+                }
+                
+            }
+
+            if (powerN < distanceM)
+            {
+                Console.WriteLine(powerN);
+                Console.WriteLine(count);
+            }
+
+
+        }
+
+    }
+}
