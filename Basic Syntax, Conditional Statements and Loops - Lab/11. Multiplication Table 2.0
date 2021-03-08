@@ -1,0 +1,31 @@
+using System;
+
+namespace ddddd
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int num = int.Parse(Console.ReadLine());
+            int multiplier = int.Parse(Console.ReadLine());
+
+            if (multiplier > 10)
+            {
+
+                Console.WriteLine($"{num} X {multiplier} = {num * multiplier}");
+                return;
+            }
+            
+
+            for (int i = multiplier; i <= 10; i++)
+            {
+                int result = num * i;
+                Console.WriteLine($"{num} X {i} = {result}");
+            }
+           
+
+
+        }
+    }
+}
