@@ -1,0 +1,51 @@
+using System;
+using System.Globalization;
+using System.Linq;
+using System.Threading.Channels;
+
+namespace ConsoleApp19
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] arr = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            int topInteger = 0;
+            
+
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int currentNumber = arr[i];
+                bool isTopNumber = true;
+
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    int rightNumber = arr[j];
+                    if (rightNumber >= currentNumber)
+                    {
+                        isTopNumber = false;
+                        break;
+                    }
+                }
+                if (isTopNumber)
+                {
+                    Console.Write($"{currentNumber} ");
+                }
+
+
+                
+                
+
+
+            }
+            Console.WriteLine();
+            
+
+        }
+
+
+    }
+}
