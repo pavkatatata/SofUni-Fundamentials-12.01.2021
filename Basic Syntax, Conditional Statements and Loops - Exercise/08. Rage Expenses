@@ -1,0 +1,60 @@
+using System;
+
+namespace DDDDddddddd
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double lostGamesCount = double.Parse(Console.ReadLine());
+            double headsetPrice = double.Parse(Console.ReadLine());
+            double mousePrice = double.Parse(Console.ReadLine());
+            double keyboardPrice = double.Parse(Console.ReadLine());
+            double displayPrice = double.Parse(Console.ReadLine());
+
+            double headsetCounter = 0;
+            double mouseCounter = 0;
+            double keyboardCounter = 0;
+            double displayCounter = 0;
+
+            bool flag1 = false;
+            bool flag2 = false;
+            bool flag3 = false;
+
+            for (int i = 1; i <= lostGamesCount; i++)
+            {
+                flag1 = false;
+                flag2 = false;
+                flag3 = false;
+
+                if (i % 2 == 0)
+                {
+                    headsetCounter++;
+                    flag1 = true;
+                }
+                if (i % 3 == 0)
+                {
+                    mouseCounter++;
+                    flag2 = true;
+                }
+                if (flag1 == true && flag2 == true)
+                {
+                    keyboardCounter++;
+                    if (keyboardCounter % 2 == 0)
+                    {
+                        flag3 = true;
+                    }
+
+                }
+                if (flag3 == true)
+                {
+                    displayCounter++;
+                }
+
+            }
+
+            double sum = (headsetPrice * headsetCounter) + (mousePrice * mouseCounter) + (keyboardPrice * keyboardCounter) + (displayPrice * displayCounter);
+                Console.WriteLine($"Rage expenses: {sum:f2} lv.");
+        }
+    }
+}
