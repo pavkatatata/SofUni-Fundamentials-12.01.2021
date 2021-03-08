@@ -1,0 +1,87 @@
+using System;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            {
+
+
+                double budget = double.Parse(Console.ReadLine());
+
+                string game = Console.ReadLine();
+                double priceGame = 0;
+                double spendMoney = 0;
+                bool flag1 = false;
+
+                while (game != "Game Time")
+                {
+
+                    flag1 = false;
+                    switch (game)
+                    {
+                        case "OutFall 4":
+                            priceGame = 39.99;
+                            break;
+                        case "CS: OG":
+                            priceGame = 15.99;
+                            break;
+                        case "Zplinter Zell":
+                            priceGame = 19.99;
+                            break;
+                        case "Honored 2":
+                            priceGame = 59.99;
+                            break;
+                        case "RoverWatch":
+                            priceGame = 29.99;
+                            break;
+                        case "RoverWatch Origins Edition":
+                            priceGame = 39.99;
+                            break;
+                        default:
+                            Console.WriteLine("Not Found");
+                            flag1 = true;
+                            break;
+
+                    }
+                    if (budget >= priceGame)
+                    {
+                        spendMoney += priceGame;
+                    }
+
+                    if (budget == 0)
+                    {
+                        Console.WriteLine("Out of money!");
+                        return;
+                    }
+
+                    if (budget >= priceGame && flag1 != true)
+                    {
+                        Console.WriteLine($"Bought {game}");
+                        budget -= priceGame;
+                    }
+                    else if (budget <= priceGame)
+                    {
+                        Console.WriteLine("Too Expensive");
+                    }
+
+
+
+                    game = Console.ReadLine();
+
+
+                }
+                if (budget == 0)
+                {
+                    Console.WriteLine("Out of money!");
+                    return;
+                }
+                Console.WriteLine($"Total spent: ${spendMoney:f2}. Remaining: ${budget:f2}");
+            }
+
+
+        }
+    }
+}
