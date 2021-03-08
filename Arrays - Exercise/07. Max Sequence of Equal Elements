@@ -1,0 +1,49 @@
+using System;
+using System.Linq;
+
+namespace ConsoleApp21
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int[] arr = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            int bestSeqSize = 0;
+            int bestSeqNumber = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int currectNumber = arr[i];
+                int seqSize = 1;
+
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    int nextNumber = arr[j];
+                    if (nextNumber == currectNumber)
+                    {
+                        seqSize += 1;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (seqSize > bestSeqSize)
+                {
+                    bestSeqSize = seqSize;
+                    bestSeqNumber = currectNumber;
+                }
+            }
+
+            for (int i = 0; i < bestSeqSize; i++)
+            {
+                Console.Write($"{bestSeqNumber} ");
+            }
+            Console.WriteLine();
+        } 
+
+    }
+}
