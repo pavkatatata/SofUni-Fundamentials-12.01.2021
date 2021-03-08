@@ -1,0 +1,86 @@
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int people = int.Parse(Console.ReadLine());
+            string type = Console.ReadLine();
+            string day = Console.ReadLine();
+
+            double ticket = 0;
+            double totalPrice = 0;
+
+            switch (day)
+            {
+
+                case "Friday":
+                    switch (type)
+                    {
+                        case "Students":
+                            ticket = 8.45;
+                            break;
+                        case "Business":
+                            ticket = 10.90;
+                            break;
+                        case "Regular":
+                            ticket = 15;
+                                break;
+                    }
+                    break;
+                case "Saturday":
+                    switch (type)
+                    {
+                        case "Students":
+                            ticket = 9.80;
+                            break;
+                        case "Business":
+                            ticket = 15.60;
+                            break;
+                        case "Regular":
+                            ticket = 20;
+                            break;
+                    }
+                    break;
+                case "Sunday":
+                    switch (type)
+                    {
+                        case "Students":
+                            ticket = 10.46;
+                            break;
+                        case "Business":
+                            ticket = 16;
+                            break;
+                        case "Regular":
+                            ticket = 22.50;
+                            break;
+                    }
+                    break;
+
+            }
+            totalPrice = people * ticket;
+
+            if (type == "Students" && people >= 30 )
+            {
+                totalPrice -= totalPrice * 0.15;
+            }
+            if (type == "Business" && people >= 100 )
+            {
+                people = people - 10;
+                totalPrice = people * ticket;
+
+            }
+            if (type == "Regular" && people >= 10 && people <= 20)
+            {
+                totalPrice = totalPrice - (totalPrice * 0.05);
+            }
+
+            Console.WriteLine($"Total price: {totalPrice:f2}");
+
+        }
+
+    }
+}
