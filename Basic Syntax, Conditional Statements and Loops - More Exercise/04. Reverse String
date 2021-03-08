@@ -1,0 +1,30 @@
+using System;
+using System.Linq;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            {
+
+
+                string name = Console.ReadLine();
+
+                string c = "";
+
+                for (int i = name.Length - 1; i >= 0; i--)
+                {
+                    c += name[i];
+                }
+                Console.WriteLine(c);
+
+
+
+            }
+
+
+        }
+    }
+}
