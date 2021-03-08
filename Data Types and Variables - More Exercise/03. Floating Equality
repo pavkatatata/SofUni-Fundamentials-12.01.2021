@@ -1,0 +1,27 @@
+using System;
+
+namespace ConsoleApp10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double numA = double.Parse(Console.ReadLine());
+            double numB = double.Parse(Console.ReadLine());
+
+            double eps = 0.000001;
+            
+            bool numsEquality = Math.Abs(numA - numB) < eps;
+
+            if (numsEquality)
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+
+        }
+    }
+}
