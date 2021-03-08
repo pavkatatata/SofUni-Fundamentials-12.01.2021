@@ -1,0 +1,26 @@
+using System;
+namespace Lower_To_Upper
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            
+
+            double length = double.Parse(Console.ReadLine());
+
+
+            double width = double.Parse(Console.ReadLine());
+           
+
+            double  high = double.Parse(Console.ReadLine());
+
+
+            double volume = (length * width * high) / 3;
+
+            Console.WriteLine($" Length: Width: Height: Pyramid Volume: {volume:f2}");
+
+        }
+    }
+}
