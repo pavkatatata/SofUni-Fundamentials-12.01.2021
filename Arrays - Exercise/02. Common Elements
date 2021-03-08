@@ -1,0 +1,43 @@
+using System;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+
+namespace ConsoleApp17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string[] arr1 = Console.ReadLine().Split(" ").ToArray();
+            string[] arr2 = Console.ReadLine().Split(" ").ToArray();
+
+            string modify = null;
+            string arr1Element = null;
+            string arr2Element = null;
+
+
+
+
+            for (int j = 0; j < arr2.Length; j++)
+            {
+                arr2Element = arr2[j];
+
+                for (int i = 0; i < arr1.Length; i++)
+                {
+                    arr1Element = arr1[i];
+                    if (arr1Element == arr2Element)
+                    {
+                       Console.Write($"{arr1Element} ");
+
+                    }
+
+                }
+
+            }
+            Console.WriteLine();
+
+
+        }
+    }
+}
