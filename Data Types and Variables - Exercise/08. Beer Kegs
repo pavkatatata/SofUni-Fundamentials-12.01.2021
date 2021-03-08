@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Fundamentals_Water_Overflow
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            double volume = 0;
+            double volMax = Double.MinValue;
+            string BigKeg = "";
+
+
+            for (int i = 1; i <= n; i++)
+            {
+                string model = Console.ReadLine();
+                float radius = float.Parse(Console.ReadLine());
+                int high = int.Parse(Console.ReadLine());
+
+                volume = Math.PI * (radius * radius) * high;
+
+                if (volume > volMax)
+                {
+                    volMax = volume;
+                    BigKeg = model;
+                }
+
+
+            }
+            Console.WriteLine(BigKeg);
+
+
+            
+        }
+    }
+}
