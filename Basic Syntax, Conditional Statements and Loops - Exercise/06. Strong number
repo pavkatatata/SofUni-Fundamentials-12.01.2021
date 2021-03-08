@@ -1,0 +1,38 @@
+using System;
+using System.Linq;
+
+namespace rever
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int num = int.Parse(Console.ReadLine());
+            int sum = 0;
+            int originNumber = num;
+
+            while (num > 0)
+            {
+                int lastDigit = num % 10;
+                int factoriel = 1;
+                for (int i = lastDigit ; i >= 1; i--)
+                {
+                    factoriel *= i;
+                }
+              
+                sum += factoriel;
+                num /= 10;
+            }
+
+            if (sum == originNumber)
+            {
+                Console.WriteLine("yes");
+            }
+            else
+            {
+                Console.WriteLine("no");
+            }
+        }
+    }
+}
