@@ -1,0 +1,41 @@
+using System;
+using System.Numerics;
+
+namespace EX09_Spice_Must_Flow
+{
+    class MineProduction
+    {
+        static void Main()
+        {
+
+            int n = int.Parse(Console.ReadLine());
+            int snowHigh = 0;
+            int timeHigh = 0;
+            int qualityHigh = 0;
+
+            BigInteger highValue = int.MinValue;
+
+            for (int i = 0; i < n; i++)
+            {
+               int snowballSnow = int.Parse(Console.ReadLine());
+               int snowballTime = int.Parse(Console.ReadLine());
+               int snowballQuality = int.Parse(Console.ReadLine());
+
+              BigInteger  snowballCallValue = BigInteger.Pow(snowballSnow / snowballTime, snowballQuality);
+                
+                if (snowballCallValue > highValue)
+                {
+                    highValue = snowballCallValue;
+                    snowHigh = snowballSnow;
+                    timeHigh = snowballTime;
+                    qualityHigh = snowballQuality;
+                }
+                
+            }
+            Console.WriteLine($"{snowHigh} : {timeHigh} = {highValue} ({qualityHigh})");
+
+
+        }
+
+    }
+}
