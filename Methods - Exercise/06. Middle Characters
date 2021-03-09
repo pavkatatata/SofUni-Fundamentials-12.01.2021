@@ -1,0 +1,30 @@
+using System;
+using System.Runtime.InteropServices.WindowsRuntime;
+
+namespace ConsoleApp31
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string str = Console.ReadLine();
+
+            string middle =  MiddleCharacters(str);
+
+
+
+            Console.WriteLine(middle);
+        }
+
+        private static string MiddleCharacters(string str)
+        {
+            if (str.Length % 2 == 0)
+            {
+                return $"{str[str.Length / 2 - 1]}{str[str.Length / 2]}";
+            }
+
+            return $"{str[(str.Length - 1) / 2]}";
+        }
+    }
+}
