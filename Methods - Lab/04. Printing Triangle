@@ -1,0 +1,48 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Runtime.CompilerServices;
+
+namespace ConsoleApp25
+{
+    class Program
+    {
+        static void Main(string[] args)
+
+        {
+
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+             
+                PrintNumbers(i);
+            }
+
+            for (int i = n - 1; i > 0; i--)
+            {
+                PrintNumbers(i);
+
+            }
+
+        }
+
+        static void PrintNumbers(int ddda)
+        {
+            for (int i = 1; i <= ddda; i++)
+            {
+                Console.Write( i + " ");
+            }
+            Console.WriteLine();
+        }
+            
+
+
+
+       
+
+        
+
+
+    }
+}
