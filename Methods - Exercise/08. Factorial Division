@@ -1,0 +1,36 @@
+using System;
+using System.Runtime.InteropServices.WindowsRuntime;
+
+namespace ConsoleApp31
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double num1 = int.Parse(Console.ReadLine());
+            double num2 = int.Parse(Console.ReadLine());
+
+
+            double firstFactoriel = CalculateFactorial(num1);
+            double secondFactoriel = CalculateFactorial(num2);
+
+            double rusult = (double)firstFactoriel  / secondFactoriel;
+            Console.WriteLine($"{rusult:f2}");
+
+
+        }
+
+        private static double CalculateFactorial(double num1)
+        {
+            double factorail = 1;
+            for (int i = 2; i <= num1; i++)
+            {
+                factorail = factorail * i;
+            }
+
+            return factorail;
+
+        }
+    }
+}
+
