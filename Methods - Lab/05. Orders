@@ -1,0 +1,50 @@
+using System;
+using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Runtime.CompilerServices;
+using System.Text.Json;
+
+namespace ConsoleApp25
+{
+    class Program
+    {
+        static void Main(string[] args)
+
+        {
+
+            string item = Console.ReadLine();
+            int pieces = int.Parse(Console.ReadLine());
+
+            double coast = 0;
+            double sum = 0;
+
+            switch (item)
+            {
+                case "coffee":
+                    coast = 1.5;
+                    TheSum(sum, coast, pieces);
+                    break;
+                case "water":
+                    coast = 1.0;
+                    TheSum(sum, coast, pieces);
+                    break;
+                case "coke":
+                    coast = 1.4;
+                    TheSum(sum, coast, pieces);
+                    break;
+                case "snacks":
+                    coast = 2.0;
+                    TheSum(sum, coast, pieces);
+                    break;
+
+            }
+        }
+
+        private static void TheSum(double sum, double coast, int pieces)
+        {
+            sum = coast * pieces;
+            Console.WriteLine($"{sum:f2}");
+        }
+
+    }
+}
