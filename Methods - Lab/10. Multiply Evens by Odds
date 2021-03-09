@@ -1,0 +1,51 @@
+using System;
+using System.Linq;
+
+namespace ConsoleApp28
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            int input = Math.Abs(int.Parse(Console.ReadLine()));
+
+            GetSumOfOddDigits(input);
+
+
+           
+
+        }
+
+        private static void GetSumOfOddDigits(int input)
+        {
+            int currectNumber = 0;
+            int evens = 0;
+            int odds = 0;
+            int sum = 0;
+
+            while (input > 0)
+            {
+
+                currectNumber = input % 10;
+                if (currectNumber % 2 == 0)
+                {
+                    evens += currectNumber;
+                }
+                else
+                {
+                    odds += currectNumber;
+                }
+
+
+                input = input / 10;
+            }
+
+            sum = evens * odds;
+            Console.WriteLine(sum);
+
+
+        }
+    }
+}
