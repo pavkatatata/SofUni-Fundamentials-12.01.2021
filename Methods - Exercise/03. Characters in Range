@@ -1,0 +1,53 @@
+using System;
+using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
+
+namespace ConsoleApp30
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            char a = char.Parse( Console.ReadLine());
+            char b = char.Parse(Console.ReadLine());
+
+
+            CharactersRange(a, b);
+
+
+
+
+
+
+        }
+
+        private static void CharactersRange(char a1, char b1)
+        {
+            char first = (char) 0;
+            char second = (char) 0;
+
+            if (a1 < b1)
+            {
+                 first = a1;
+                 second = b1;
+            }
+            else
+            {
+                 first = b1;
+                 second = a1;
+            }
+
+            
+
+            for (int i = first + 1 ; i < second; i++)
+            {
+
+                char currentChar = Convert.ToChar(i);
+                Console.Write($"{currentChar} ");
+
+            }
+
+        }
+    }
+}
