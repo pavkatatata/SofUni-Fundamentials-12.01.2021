@@ -1,0 +1,45 @@
+using System;
+using System.Linq;
+
+namespace ConsoleApp28
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            int firstNum = int.Parse(Console.ReadLine());
+            string operat = Console.ReadLine();
+            int second = int.Parse(Console.ReadLine());
+
+
+            MathOperations(firstNum, operat, second);
+            Console.WriteLine(MathOperations(firstNum, operat, second));
+        }
+
+        private static int MathOperations(int firstNum, string operat, int second)
+        {
+            int result = 0;
+            if (operat == "+")
+            {
+                result = firstNum + second;
+            }
+            else if (operat == "-")
+            {
+                result = firstNum - second;
+            }
+            else if (operat == "*")
+            {
+                result = firstNum * second;
+            }
+            else if (operat == "/")
+            {
+                result = firstNum / second;
+            }
+
+            return result;
+
+        }
+    }
+}
