@@ -1,0 +1,41 @@
+using System;
+using System.Runtime.InteropServices.WindowsRuntime;
+
+namespace ConsoleApp31
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string input = Console.ReadLine();
+
+            Palindrome(input);
+
+
+
+
+        }
+
+        private static void Palindrome(string input)
+        {
+            while (!(input == "END"))
+            {
+               
+
+                if (input[0] == input[input.Length - 1])
+                {
+                    Console.WriteLine("true");
+                }
+                else
+                {
+                    Console.WriteLine("false");
+                }
+
+
+
+                input = Console.ReadLine();
+            }
+        }
+    }
+}
