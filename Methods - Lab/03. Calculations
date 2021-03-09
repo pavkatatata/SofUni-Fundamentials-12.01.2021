@@ -1,0 +1,42 @@
+using System;
+using System.Runtime.InteropServices;
+
+namespace PascalTriangle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string input = Console.ReadLine();
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+
+            Calculation(input, num1, num2);
+
+
+        }
+
+        private static void Calculation(string input, int num1, int num2)
+        {
+            int sum = 0;
+            switch (input)
+            {
+
+                case "add":
+                    sum = num1 + num2;
+                    break;
+                case "multiply":
+                    sum = num1 * num2;
+                    break;
+                case "subtract":
+                    sum = num1 - num2;
+                    break;
+                case "divide":
+                    sum = num1 / num2;
+                    break;
+            }
+            Console.WriteLine(sum);
+        }
+    }
+}
