@@ -1,0 +1,40 @@
+using System;
+
+namespace _0_4TribonacciSequence
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = int.Parse(Console.ReadLine());
+            PrintTrib(num);
+        }
+
+        private static int GetTribonacci(int num)
+        {
+            if (num <= 2)
+            {
+                return 1;
+            }
+
+            if (num == 3)
+            {
+                return 2;
+            }
+            else
+            {
+                return GetTribonacci(num - 3) +
+                       GetTribonacci(num - 2) +
+                       GetTribonacci(num - 1);
+            }
+        }
+
+        private static void PrintTrib(int num)
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                Console.Write("{0} ", GetTribonacci(i));
+            }
+        }
+    }
+}
