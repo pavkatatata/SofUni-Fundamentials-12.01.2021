@@ -1,0 +1,29 @@
+using System;
+using System.Linq;
+using System.Text;
+using System.Runtime.ExceptionServices;
+
+namespace ConsoleApp27
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(MathPower(num1, num2));
+
+
+        }
+
+        public static double  MathPower(int number1, int number2)
+        {
+            double sum = Math.Pow(number1, number2);
+
+            return sum;
+        }
+    }
+
+}
