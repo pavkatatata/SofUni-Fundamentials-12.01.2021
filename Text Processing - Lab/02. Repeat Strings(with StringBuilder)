@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApp28
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string[] words = Console.ReadLine().Split();
+
+            StringBuilder commands = new StringBuilder();
+
+            foreach (string item in words)
+            {
+                int repeatTime = item.Length;
+                for (int i = 0; i < repeatTime; i++)
+                {
+                    commands.Append(item);
+                }
+            }
+            Console.WriteLine(commands);
+
+
+        }
+    }
+}
