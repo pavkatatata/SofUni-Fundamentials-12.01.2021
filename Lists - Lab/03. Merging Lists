@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> first = Console.ReadLine()
+                .Split()
+                .Select(int.Parse)
+                .ToList();
+            List<int> second = Console.ReadLine()
+                .Split()
+                .Select(int.Parse)
+                .ToList();
+            List<int> third = new List<int>();
+                
+
+            if (first.Count > second.Count)
+            {
+                for (int i = 0; i < first.Count; i++)
+                {
+                    third.Add(first[i]);
+                    if (i < second.Count)
+                    {
+                        third.Add(second[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < second.Count; i++)
+                {
+
+                    if (i < first.Count)
+                    {
+                        third.Add(first[i]);
+                    }
+                    third.Add(second[i]);
+                }
+
+            }
+            Console.WriteLine(String.Join(" ", third));
+        }
+    }
+}
