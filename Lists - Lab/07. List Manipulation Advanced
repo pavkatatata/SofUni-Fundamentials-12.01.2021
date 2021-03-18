@@ -1,0 +1,152 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace _7.List_Manipulation_Advanced
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> numbers = Console.ReadLine()
+                 .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                 .Select(int.Parse)
+                 .ToList();
+
+            List<int> originalNumbers = numbers.ToList();
+
+            while (true)
+            {
+                string command = Console.ReadLine();
+                string[] commandArray = command.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+
+                if (commandArray[0] == "Add" ||
+                                         commandArray[0] == "Remove" ||
+                                         commandArray[0] == "RemoveAt" ||
+                                         commandArray[0] == "Insert")
+                {
+                    if (commandArray[0] == "Add")
+                    {
+                        numbers.Add(int.Parse(commandArray[1]));
+                    }
+                    else if (commandArray[0] == "Remove")
+                    {
+                        numbers.Remove(int.Parse(commandArray[1]));
+                    }
+                    else if (commandArray[0] == "RemoveAt")
+                    {
+                        numbers.RemoveAt(int.Parse(commandArray[1]));
+                    }
+                    else if (commandArray[0] == "Insert")
+                    {
+                        numbers.Insert(int.Parse(commandArray[2]), int.Parse(commandArray[1]));
+                    }
+                }
+                else if (command == "end")
+                {
+                    break;
+                }
+                else
+                {
+                    if (commandArray[0] == "Contains")
+                    {
+
+                        if (numbers.Contains(int.Parse(commandArray[1])))
+                        {
+                            Console.WriteLine("Yes");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No such number");
+                        }
+                    }
+                    else if (commandArray[0] == "PrintEven")
+                    {
+                        List<int> result = GetPrintEven(numbers);
+                        Console.WriteLine(string.Join(" ", result));
+                    }
+                    else if (commandArray[0] == "PrintOdd")
+                    {
+                        List<int> result = GetPrintOdd(numbers);
+                        Console.WriteLine(string.Join(" ", result));
+                    }
+                    else if (commandArray[0] == "GetSum")
+                    {
+                        int result = GetSum(numbers);
+                        Console.WriteLine(result);
+                    }
+                    else if (commandArray[0] == "Filter")
+                    {
+                        List<int> result = new List<int>();
+                        if (commandArray[1] == ">=")
+                        {
+                            result = numbers.Where(n => n >= int.Parse(commandArray[2])).ToList();
+                        }
+                        else if (commandArray[1] == "<=")
+                        {
+                            result = numbers.Where(n => n <= int.Parse(commandArray[2])).ToList();
+                        }
+                        else if (commandArray[1] == "<")
+                        {
+                            result = numbers.Where(n => n < int.Parse(commandArray[2])).ToList();
+                        }
+                        else if (commandArray[1] == ">")
+                        {
+                            result = numbers.Where(n => n > int.Parse(commandArray[2])).ToList();
+                        }
+                        Console.WriteLine(string.Join(" ", result));
+
+                    }
+                }
+            }
+
+            if (!originalNumbers.SequenceEqual(numbers))
+            {
+                Console.WriteLine(string.Join(" ", numbers));
+            }
+
+        }
+
+        private static int GetSum(List<int> numbers)
+        {
+            int sum = 0;
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                sum += numbers[i];
+            }
+            return sum;
+        }
+
+        private static List<int> GetPrintOdd(List<int> numbers)
+        {
+            List<int> oddList = new List<int>(numbers.Count);
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] % 2 != 0)
+                {
+                    oddList.Add(numbers[i]);
+                }
+
+            }
+            return oddList;
+        }
+
+        private static List<int> GetPrintEven(List<int> numbers)
+        {
+            List<int> evenList = new List<int>(numbers.Count);
+
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] % 2 == 0)
+                {
+                    evenList.Add(numbers[i]);
+                }
+
+            }
+            return evenList;
+        }
+    }
+}
