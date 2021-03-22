@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ChangeList
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<int> numbers = Console.ReadLine()
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToList();
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+                if (input == "end")
+                {
+                    break;
+                }
+
+                string[] tooken = input.Split();
+
+                if (tooken[0] == "Delete")
+                {
+                    for (int i = 0; i < numbers.Count; i++)
+                    {
+                        if (numbers[i] == int.Parse(tooken[1]))
+                        {
+                            numbers.RemoveAt(i);
+                            i--;
+                        }
+
+                    }
+                }
+
+                if (tooken[0] == "Insert")
+                {
+                    int insertNumber = int.Parse(tooken[1]);
+                    int insertPosition = int.Parse(tooken[2]);
+                    numbers.Insert(insertPosition, insertNumber);
+
+
+                    
+                }
+
+            }
+            Console.WriteLine(String.Join(" ", numbers));
+
+        }
+    }
+}
