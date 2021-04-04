@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+
+namespace ConsoleApp42
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            {
+                Dictionary<string, int> mine = new Dictionary<string, int>();
+
+                int quantites = 0;
+                while (true)
+                {
+                    string resource = Console.ReadLine();
+                    if (resource == "stop")
+                    {
+                        break;
+                    }
+                    quantites = int.Parse(Console.ReadLine());
+                    
+
+                    if (mine.ContainsKey(resource))
+                    {
+                        mine[resource] += quantites;
+                    }
+                    else
+                    {
+                        mine.Add(resource, quantites);
+                    }
+
+                    
+                }
+
+                foreach (var item in mine)
+                {
+                    Console.WriteLine($"{item.Key} -> {item.Value}");
+
+                }
+                
+
+
+            }
+        }
+
+    }
+}
