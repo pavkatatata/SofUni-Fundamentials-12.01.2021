@@ -1,0 +1,39 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text;
+
+namespace test1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string[] replacedWords = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries).ToArray();
+
+            string text = Console.ReadLine();
+            string newValue = string.Empty;
+
+            for (int i = 0; i < replacedWords.Length; i++)
+            {
+
+                while (text.Contains(replacedWords[i]))
+                {
+                    newValue = string.Empty;
+                    foreach (char item in replacedWords[i])
+                    {
+                        newValue += "*";
+                    }
+
+                   text = text.Replace(replacedWords[i], newValue);
+                }
+                
+            }
+            Console.WriteLine(text);
+
+         
+
+        }
+    }
+}
