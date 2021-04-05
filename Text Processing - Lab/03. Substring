@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApp28
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string rmWord = Console.ReadLine().ToLower();
+           
+            string text = Console.ReadLine();
+
+
+
+            while (text.Contains(rmWord))
+            {
+                text = text.Replace(rmWord, string.Empty);
+            }
+
+            Console.WriteLine(text);
+
+        }
+    }
+}
