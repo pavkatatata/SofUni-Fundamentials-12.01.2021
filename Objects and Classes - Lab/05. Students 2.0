@@ -1,0 +1,98 @@
+using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
+
+namespace ConsoleApp11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Student> list = new List<Student>();
+
+            string input = Console.ReadLine();
+
+            while (input != "end")
+            {
+                string[] tooken = input.Split(" ");
+                string firstName = tooken[0];
+                string lastName = tooken[1];
+                int age = int.Parse(tooken[2]);
+                string hometown = tooken[3];
+                if (IsStudentExisting(list, firstName, lastName))
+                {
+                    Student student = GetStudent(list, firstName, lastName);
+
+                    student.FirstName = firstName;
+                    student.LastName = lastName;
+                    student.Age = age;
+                    student.HomeTown = hometown;
+                }
+                else
+                {
+                    Student student = new Student()
+                    {
+                        FirstName = firstName,
+                        LastName = lastName,
+                        Age = age,
+                        HomeTown = hometown,
+
+                    };
+
+
+                    list.Add(student);
+                }
+
+                
+                input = Console.ReadLine();
+
+            }
+
+            string townFind = Console.ReadLine();
+            foreach (Student stud in list)
+            {
+                if (townFind == stud.HomeTown)
+                {
+                    Console.WriteLine($"{stud.FirstName} {stud.LastName} is {stud.Age} years old.");
+                }
+                
+            }
+        }
+
+        private static Student GetStudent(List<Student> list, string firstName, string lastName)
+        {
+            Student existingStudent = null;
+            foreach (Student stud in list)
+            {
+                if (stud.FirstName == firstName && stud.LastName == lastName)
+                {
+                    existingStudent = stud;
+                }
+            }
+
+            return existingStudent;
+        }
+
+        private static bool IsStudentExisting(List<Student> list, string firstName, string lastName)
+        {
+            foreach (Student stud in list)
+            {
+                if (stud.FirstName == firstName && stud.LastName == lastName)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
+    class Student
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+        public string HomeTown { get; set; }
+
+
+    }
+}
