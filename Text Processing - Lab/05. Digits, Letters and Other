@@ -1,0 +1,44 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text;
+
+namespace test1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string text = Console.ReadLine();
+
+            StringBuilder isItNumber = new StringBuilder();
+            var isItLetter = new StringBuilder();
+            string spesifChar = string.Empty;
+
+            foreach (char item in text)
+            {
+                if (char.IsDigit(item))
+                {
+                    isItNumber.Append(item);
+                }
+                else if (char.IsLetter(item))
+                {
+                    isItLetter.Append(item);
+                }
+                else
+                {
+                    spesifChar += item;
+                }
+
+
+            }
+            Console.WriteLine(isItNumber);
+            Console.WriteLine(isItLetter);
+            Console.WriteLine(spesifChar);
+           
+
+
+        }
+    }
+}
