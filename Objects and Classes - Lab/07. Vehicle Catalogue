@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp15
+{
+    class Trucks
+    {
+        public string Brand { get; set; }
+
+        public string Model { get; set; }
+
+        public int Weight { get; set; }
+    }
+
+    class Cars
+    {
+        public string Brand { get; set; }
+
+        public string Model { get; set; }
+
+        public int Weight { get; set; }
+    }
+
+    class Catalog
+    {
+        public List<Trucks> truck = new List<Trucks>();
+
+        public List<Cars> car = new List<Cars>();
+
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+        List<Trucks> truck = new List<Trucks>();
+
+         List<Cars> car = new List<Cars>();
+
+            while (true)
+            {
+                string[] input = Console.ReadLine().Split("/").ToArray();
+                if (input[0] == "end")
+                {
+                    break;
+                }
+
+                if (input[0] == "Car")
+                {
+                    Cars carsInput = new Cars()
+                    {
+                        Brand = input[1],
+                        Model =  input[2],
+                        Weight = int.Parse(input[3])
+
+                    };
+                    car.Add(carsInput);
+                }
+                if (input[0] == "Truck")
+                {
+                    Trucks truckInput = new Trucks()
+                    {
+                        Brand = input[1],
+                        Model = input[2],
+                        Weight = int.Parse(input[3])
+
+                    };
+                   truck.Add(truckInput);
+                }
+            }
+
+            List<Cars> sortedCars = car.OrderBy(n => n.Brand).ToList();
+            List<Trucks> sortedTrucks = truck.OrderBy(n => n.Brand).ToList();
+            Console.WriteLine("Cars:");
+            foreach (var machineCar in sortedCars)
+            {
+               
+                Console.WriteLine($"{machineCar.Brand}: {machineCar.Model} - {machineCar.Weight}hp");
+            }
+            Console.WriteLine("Trucks:");
+            foreach (var machineTruck in sortedTrucks)
+            {
+                
+                Console.WriteLine($"{machineTruck.Brand}: {machineTruck.Model} - {machineTruck.Weight}kg");
+
+            }
+
+        }
+    }
+}
