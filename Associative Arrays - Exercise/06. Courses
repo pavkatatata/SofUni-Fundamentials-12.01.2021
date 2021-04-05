@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class Program
+{
+    public static void Main()
+    {
+        string inputPrim = "";
+
+        var listOfCours = new Dictionary<string, List<string>>();
+
+        while ((inputPrim = Console.ReadLine()) != "end")
+        {
+            var input = inputPrim
+                .Split(':')
+                .Select(x => x.Trim())
+                .ToArray();
+
+            if (!listOfCours.ContainsKey(input[0]))
+            {
+                listOfCours[input[0]] = new List<string>();
+            }
+
+            listOfCours[input[0]].Add(input[1]);
+        } // end while
+
+
+        foreach (var kvp in listOfCours.OrderByDescending(x => x.Value.Count))
+        {
+            Console.WriteLine("{0}: {1}", kvp.Key, kvp.Value.Count);
+            foreach (var item in kvp.Value.OrderBy(x => x))
+            {
+                Console.WriteLine("-- {0}", item);
+            }
+        }
+
+    }
+
+}
