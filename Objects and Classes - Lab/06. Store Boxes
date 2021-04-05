@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace ConsoleApp14
+{
+    class Program
+    {
+
+        class Item
+        {
+
+            public string Name { get; set; }
+
+            public double Price { get; set; }
+
+        }
+        class Box
+        {
+
+            public int SerialNumber { get; set; }
+
+            public string Item { get; set; }
+
+            public int Itemquantity { get; set; }
+
+            public double PriceForBox { get; set; }
+
+            public double ItemPrice { get; set; }
+
+        }
+        static void Main(string[] args)
+        {
+            List<Box> Boxlisted = new List<Box>();
+
+            while (true)
+            {
+                string[] input = Console.ReadLine().Split(" ").ToArray();
+                if (input[0] == "end")
+                {
+                    break;
+                }
+
+                Box tooken = new Box()
+                {
+                    SerialNumber = int.Parse(input[0]),
+                    Item = input[1],
+                    Itemquantity = int.Parse(input[2]),
+                    PriceForBox = (double.Parse(input[3]) * int.Parse(input[2])),
+                    ItemPrice = double.Parse(input[3])
+
+                };
+                Boxlisted.Add(tooken);
+
+                
+            }
+
+            List<Box> sorted = Boxlisted.OrderByDescending(n => n.PriceForBox).ToList();
+            foreach (var item in sorted)
+            {
+                Console.WriteLine(item.SerialNumber);
+                Console.WriteLine($"-- {item.Item} - ${item.ItemPrice:f2}: {item.Itemquantity}");
+                Console.WriteLine($"-- ${item.PriceForBox:f2}");
+
+            }
+
+
+        }
+    }
+}
